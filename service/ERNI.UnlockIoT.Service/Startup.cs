@@ -19,19 +19,25 @@ namespace ERNI.UnlockIoT.Service
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets();
+            }
+
             Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddMvc();
+
+            var subscriptionId = Configuration.GetSection("ERNI").GetValue<string>("CognitiveSubscriptionId");
+            services.AddTransient<Microsoft.ProjectOxford.Face.FaceServiceClient>(s => new Microsoft.ProjectOxford.Face.FaceServiceClient(subscriptionId));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
