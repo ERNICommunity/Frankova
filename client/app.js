@@ -5,15 +5,13 @@ var path = require('path');
 var file = path.join(__dirname, 'result.jpg')
  
 
-camera.takeImage(file, function (image) { 
-    cloud.evaluate(image, 
-        function(result) {
-            if (!!str || str.length !== 0) {
-                box.open();
-            } 
-        }
-    );
-});
+cloud.evaluate(image, 
+    function(result) {
+        if (!!str || str.length !== 0) {
+            box.open();
+        } 
+    }
+);
 
 
 console.log("command executed.");
