@@ -2,6 +2,7 @@
     "name": "frankovka-client",
     "version": "0.1",
     "dependencies": {
-        "v4l2camera": "*"
+        "v4l2camera": "*",
+        "pi-gpio" : "*"
     }
 }
