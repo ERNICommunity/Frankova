@@ -4,6 +4,6 @@
     "dependencies": {
         "v4l2camera": "*",
         "pi-gpio" : "*",
-        "restler": "*"
+        "unirest": "*"
     }
 }
