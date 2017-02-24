@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <UserSecretsId>de58a4c5-9c11-4e2e-a0b3-c283860fa287</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -22,6 +23,7 @@
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.0" />
     <PackageReference Include="Microsoft.ProjectOxford.Face" Version="1.2.1.2" />
   </ItemGroup>
