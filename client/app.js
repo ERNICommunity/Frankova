@@ -5,9 +5,9 @@ var path = require('path');
 var file = path.join(__dirname, 'result.jpg')
  
 
-cloud.evaluate(image, 
-    function(result) {
-        if (!!str || str.length !== 0) {
+cloud.evaluate(file, 
+    function(str) {
+        if (!!str && str.length !== 0) {
             box.open();
         } 
     }
