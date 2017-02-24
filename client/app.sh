@@ -1,2 +1,2 @@
-fswebcam result.jpg
+fswebcam ./result.jpg
 node app.js
